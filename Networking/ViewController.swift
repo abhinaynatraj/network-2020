@@ -41,17 +41,6 @@ class ViewController: UIViewController {
                 print("No data")
             }
         }
-        
-        provider.load(service: .courses, decodeType: Courses.self) { result in
-            switch result {
-            case .success(let resp):
-                print(resp)
-            case .failure(let error):
-                print(error.localizedDescription)
-            case .empty:
-                print("No data")
-            }
-        }
     }
 
 

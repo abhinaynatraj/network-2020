@@ -15,15 +15,3 @@ public class Course: Decodable {
     let imageUrl: String?
     let number_of_lessons: Int?
 }
-
-public class Courses: Decodable {
-    private enum CodingKeys: String, CodingKey {
-        case payload
-    }
-    public let payload: [Course]?
-    
-    public required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        payload = try container.decodeIfPresent([Course].self, forKey: .payload)
-    }
-}
